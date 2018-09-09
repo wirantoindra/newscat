@@ -19,7 +19,7 @@ echo "$token"  >> token.reg
 fi
 
 ctoken=$(cat token.reg)
-regtoken=$(curl -s  https://github.com/wirantoindra/newscatbot/blob/master/reg/ids | grep -o "$ctoken" )
+regtoken=$(curl -s   https://github.com/wirantoindra/adminfinder/blob/master/reg/ids | grep -o "$ctoken" )
 if [[ $regtoken == "$ctoken" ]]
 	then
 		printf "${ijo}[!]${NC} Token Registered To BOT Server\n" 
