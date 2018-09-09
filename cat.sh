@@ -9,7 +9,7 @@ NC='\e[0m'
 #intro
 printf "${biru}		                               
 			           Newscat APPS BOT
-				 Code By : Wanjas.com
+				 Code By : gue
 "
 printf "${kuning}	_________________________________________________________________${NC}\n\n"
 rm award.tmp aid.txt info.tmp 2> /dev/null
@@ -19,16 +19,16 @@ printf "${kuning}[!]${NC} Insert Your Newscat Token: ";read token
 echo "$token"  >> token.reg
 fi
 ctoken=$(cat token.reg)
-regtoken=$(curl -s  https://github.com/lapakdigital/adminfinder/blob/master/reg | grep -o "$ctoken" )
+regtoken=$(curl -s  https://github.com/wirantoindra/adminfinder/tree/master/reg | grep -o "$ctoken" )
 if [[ $regtoken == "$ctoken" ]]
 	then
 		printf "${ijo}[!]${NC} Token Registered To BOT Server\n" 
 else
 	printf "${merah}[!]${NC} Please Regster Your Token\n"
-	printf "${kuning}[!]${NC} Contact : tambangakun@gmail.com\n"
+	printf "${kuning}[!]${NC} Contact : wirantoindra@gmail.com\n"
 	exit
 fi
-#token='5f52799c29f136364557effbe4cbf40e'
+#token='ed8766caf04ce7361b602baa7ed83797'
 printf "${kuning}[!]${NC} Checking Token..."
 checktoken=$(curl -s -d "token=$ctoken" 'http://www.newscat.com/api/user/info' -o "info.tmp")
 getok=$(cat info.tmp | grep -Po '(?<=message":")[^"]*')
