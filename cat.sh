@@ -28,7 +28,7 @@ else
 	printf "${kuning}[!]${NC} Contact : wirantoindra@gmail.com\n"
 	exit
 fi
-#token='ed8766caf04ce7361b602baa7ed83797'
+#token='5f52799c29f136364557effbe4cbf40e'
 printf "${kuning}[!]${NC} Checking Token..."
 checktoken=$(curl -s -d "token=$ctoken" 'http://www.newscat.com/api/user/info' -o "info.tmp")
 getok=$(cat info.tmp | grep -Po '(?<=message":")[^"]*')
