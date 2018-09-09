@@ -8,16 +8,16 @@ biru='\e[1;34m'
 NC='\e[0m'
 #intro
 printf "${biru}		                               
-			           Newscat APPS BOT
-				 Code By : gue
+     Newscat APPS BOT
 "
-printf "${kuning}	_________________________________________________________________${NC}\n\n"
+printf "${kuning}==========================${NC}\n\n"
 rm award.tmp aid.txt info.tmp 2> /dev/null
 if [[ ! -f token.reg ]]
 	then
 printf "${kuning}[!]${NC} Insert Your Newscat Token: ";read token
 echo "$token"  >> token.reg
 fi
+
 ctoken=$(cat token.reg)
 regtoken=$(curl -s  https://github.com/wirantoindra/adminfinder/blob/master/reg/ids | grep -o "$ctoken" )
 if [[ $regtoken == "$ctoken" ]]
@@ -28,7 +28,7 @@ else
 	printf "${kuning}[!]${NC} Contact : wirantoindra@gmail.com\n"
 	exit
 fi
-#token='5f52799c29f136364557effbe4cbf40e'
+
 printf "${kuning}[!]${NC} Checking Token..."
 checktoken=$(curl -s -d "token=$ctoken" 'http://www.newscat.com/api/user/info' -o "info.tmp")
 getok=$(cat info.tmp | grep -Po '(?<=message":")[^"]*')
